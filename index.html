@@ -1,17 +1,18 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Lamp Controller</title>
-    <script src="/socket.io/socket.io.js"></script>
+     <head>
+         <title>Título fica em cima</title>
+          <style> * { box-sizing: border-box; }
+    img { width: 100px; display: none; } 
+    </style> </>
+    
+    <body>
+         <div> <img id="on" src="on.jpg" alt="Imagem ligada"> <img id="off" src="off.jpg" alt="Imagem desligada"> 
+        </div>
+    <button id="ligar" onclick="ligar()">Ligar</button> 
+    <button id="desligar" onclick="desligar()">Desligar</button>
+    
     <script>
-      const socket = io();
-
-      function toggleLamp() {
-        socket.emit('toggle-lamp');
-      }
-    </script>
-  </head>
-  <body>
-    <button onclick="toggleLamp()">Toggle Lamp</button>
-  </body>
-</html>
+     function ligue() { document.getElementById("on").style.display = 'block'; document.getElementById("off").style.display = 'none'; } function desligar() { document.getElementById("on").style.display = 'none'; document.getElementById("off").style.display = 'block'; } document.getElementById("ligar").addEventListener("click", ligue); document.getElementById("desligar").addEventListener("click", desligar); 
+     </script> 
+     </body> 
+     </html>
