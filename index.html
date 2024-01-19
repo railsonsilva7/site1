@@ -6,13 +6,31 @@
     </style> </>
     
     <body>
-        <div> <img id="on" src="on.jpg" alt="Imagem ligada"> <img id="off" src="off.jpg" alt="Imagem desligada"> 
-       </div>
-   <button id="ligar" onclick="ligar()">Ligar</button> 
-   <button id="desligar" onclick="desligar()">Desligar</button>
-   
-   <script>
-    function ligue() { document.getElementById("on").style.display = 'block'; document.getElementById("off").style.display = 'none'; } function desligar() { document.getElementById("on").style.display = 'none'; document.getElementById("off").style.display = 'block'; } document.getElementById("ligar").addEventListener("click", ligue); document.getElementById("desligar").addEventListener("click", desligar); 
-    </script> 
-    </body> 
-    </html>
+        <div>
+            <img id="on" src="on.jpg" alt="Imagem ligada">
+            <img id="off" src="off.jpg" alt="Imagem desligada" style="display: none;">
+        </div>
+        <button id="ligar" onclick="showDesligarButton()">Ligar</button>
+        <button id="desligar" style="display: none;">Desligar</button>
+    
+        <script>
+            function ligue() {
+                document.getElementById("on").style.display = 'none';
+                document.getElementById("off").style.display = 'block';
+            }
+    
+            function desligar() {
+                document.getElementById("on").style.display = 'block';
+                document.getElementById("off").style.display = 'none';
+            }
+    
+            function showDesligarButton() {
+                document.getElementById("ligar").style.display = 'none';
+                document.getElementById("desligar").style.display = 'block';
+                desligar();
+            }
+    
+            document.getElementById("ligar").addEventListener("click", ligue);
+            document.getElementById("desligar").addEventListener("click", desligar);
+        </script>
+    </body>
